@@ -1,0 +1,5 @@
+.eslintrc.json
+.prettierrc
+package.json
+vite.config.js
+dist
