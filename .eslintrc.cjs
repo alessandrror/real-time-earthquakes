@@ -12,7 +12,7 @@ module.exports = {
   overrides: [
     {
       files: [
-        'e2e/**/*.{test,spec}.{js,ts,jsx,tsx}'
+        'test/**/*.{test,spec}.{js,ts,jsx,tsx}'
       ],
       'extends': [
         'plugin:playwright/recommended'
