@@ -1,1 +1,29 @@
-npm test
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "🚧 Using eslint with prettier before your commit."
+
+# Check ESLint Standards
+npm run lint ||
+(
+  echo "❌ Eslint has detected some errors. You must fix that. 🧐"
+  false;
+)
+
+# Format code
+npm run format ||
+{
+  echo "❌ You didn't format the code. Prettier going to work for you. 🫰🏻"
+  false;
+}
+
+# Check if there are any changes after formatting
+if [ -n "$(git diff)" ]; then
+  echo "🪄 Applying style to your code before commiting. 🤭"
+  git status -s
+  git add .
+fi
+
+echo ""
+echo "✅ Your done! 🎉"
+echo ""
