@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
+    "@types/leaflet": "^1.9.12",
     "@vue-leaflet/vue-leaflet": "^0.10.1",
     "axios": "^1.6.8",
     "bootstrap": "^5.3.3",
