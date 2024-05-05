@@ -17,12 +17,12 @@ npm run format ||
   false;
 }
 
-# Check if there are any changes after formatting
-if [ -n "$(git diff)" ]; then
-  echo "🪄 Applying style to your code before commiting. 🤭"
-  git status -s
-  git add .
-fi
+# # Check if there are any changes after formatting
+# if [ -n "$(git diff)" ]; then
+#   echo "🪄 Applying style to your code before commiting. 🤭"
+#   git status -s
+#   git add .
+# fi
 
 echo ""
 echo "✅ Your done! 🎉"
