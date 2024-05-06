@@ -10,7 +10,7 @@ import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import { LMap, LTileLayer, LMarker, LPopup, LLayerGroup } from '@vue-leaflet/vue-leaflet'
 
-const popUpContent = ref<EarthquakeRegistry | {}>({})
+const popUpContent = ref<EarthquakeRegistry | null>(null)
 const realTimeRegistry = ref<InstanceType<typeof LLayerGroup> | null>(null)
 const earthquakesRegistry = ref<EarthquakeRegistry[] | []>([])
 const localDateTime = ref(formatDateTime(new Date()))
@@ -53,7 +53,7 @@ onMounted(async () => {
         />
         <LLayerGroup ref="realTimeRegistry">
           <LPopup>
-            <span>
+            <span v-if="popUpContent">
               <i>Date:</i>&nbsp;
               <b>{{ formatDateTime(popUpContent?.datetime) }}</b>
               <br />
@@ -69,7 +69,7 @@ onMounted(async () => {
               <i>Magnitude:</i>&nbsp;
               <b>{{ popUpContent?.magnitude }}</b>
               <br />
-              <i>Localizaci&oacute;n:</i>&nbsp;
+              <i>Location:</i>&nbsp;
               <b>{{ toUpperCaseFirstLetter(popUpContent?.location) }}</b>
               <br />
               <i>Status:</i>&nbsp;
