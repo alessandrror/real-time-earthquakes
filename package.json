@@ -15,6 +15,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@microsoft/signalr": "^8.0.0",
     "@popperjs/core": "^2.11.8",
     "@types/leaflet": "^1.9.12",
     "@vue-leaflet/vue-leaflet": "^0.10.1",
